@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  python:
+    build:
+      context: ./
+    volumes:
+      - ./pdf:/pdf
+      - ./report:/report
