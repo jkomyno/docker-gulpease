@@ -89,7 +89,9 @@ if os.path.isdir(pdf_path):
 
     with open(os.path.join(report_folder, report_file_name), \
               mode='w', encoding='utf-8') as f:
-        json.dump(results, f, sort_keys=True, indent=4)
+      # ensure_ascii=False allows to write properly filenames
+      # with accents
+      json.dump(results, f, sort_keys=True, indent=4, ensure_ascii=False)
 
     print(f'Generated file {report_file_name}')
 else:
