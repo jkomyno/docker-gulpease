@@ -10,5 +10,8 @@ echo "Spawning Gulpease process"
 
 docker-compose up --build
 
+# clean-up txt version of PDF files
+(cd ./pdf && rm -rf ./*.txt)
+
 echo "Python Gulpease report:"
 cat report/report.json
